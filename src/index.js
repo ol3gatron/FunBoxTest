@@ -6,28 +6,22 @@ const links = document.querySelectorAll("a");
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
     if (
-      e.target.className == "card card-selected" ||
-      e.target.className == "weight weight-selected" ||
-      e.target.className == "weight--number" ||
-      e.target.className == "weight-kg"
+      e.target.className == "card" ||
+      e.target.className == "card card-selected"
     ) {
       card.children[0].textContent = "Сказочное заморское яство";
+      console.log(e.target.className);
     }
 
     if (
       e.target.className == "card" ||
-      e.target.className == "card card-selected" ||
-      e.target.className == "weight" ||
-      e.target.className == "weight weight-selected" ||
-      e.target.className == "weight--number" ||
-      e.target.className == "weight-kg"
+      e.target.className == "card card-selected"
     ) {
       card.classList.toggle("card-selected");
       card.children[5].classList.toggle("weight-selected");
+      console.log(e.target.className);
     }
   });
-
-  card.addEventListener("click", (e) => {});
 
   card.addEventListener("mouseenter", (e) => {
     if (e.target.className != "card disabled") {
